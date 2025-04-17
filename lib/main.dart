@@ -1,10 +1,13 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:todyapp/featurs/home/home_page.dart';
 
 late double height;
 late double width;
 void main() {
-  runApp(MyApp());
+  runApp(DevicePreview(
+    enabled: true,
+      builder: (context) => MyApp()));
 }
 
 class MyApp extends StatelessWidget {
