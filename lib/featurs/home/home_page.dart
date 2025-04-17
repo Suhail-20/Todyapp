@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todyapp/core/common/button.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,6 +11,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Center(
+          child: FillButton(
+              icon: Icons.mail, text: 'Continue with email', onPressed: () {})),
+    );
   }
 }
