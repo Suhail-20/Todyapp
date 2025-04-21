@@ -6,6 +6,8 @@ import 'package:todyapp/featurs/auth/screens/register_screen.dart';
 import 'package:todyapp/featurs/auth/screens/sign_up_screen.dart';
 import 'package:todyapp/featurs/home/home_page.dart';
 
+import 'featurs/auth/screens/onboarding_screens/onboarding_page1.dart';
+
 var height;
 var width;
 void main() {
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         debugShowCheckedModeBanner: false,
-        home: RegisterScreen(),
+        home: OnboardingPage1(),
       ),
     );
   }
