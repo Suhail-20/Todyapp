@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todyapp/core/constans/constans.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -13,18 +14,11 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              'Welcome To',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            Text(
-              'Welcome To',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-          ],
+        title: Text(
+          'Welcome Back!',
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+          ),
         ),
       ),
     );

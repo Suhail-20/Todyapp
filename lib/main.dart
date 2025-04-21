@@ -2,6 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:todyapp/core/constans/constans.dart';
 import 'package:todyapp/featurs/auth/screens/login_screen.dart';
+import 'package:todyapp/featurs/auth/screens/register_screen.dart';
 import 'package:todyapp/featurs/auth/screens/sign_up_screen.dart';
 import 'package:todyapp/featurs/home/home_page.dart';
 
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         debugShowCheckedModeBanner: false,
-        home: LoginScreen(),
+        home: RegisterScreen(),
       ),
     );
   }
