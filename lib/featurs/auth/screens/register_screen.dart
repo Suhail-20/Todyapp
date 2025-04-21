@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:todyapp/core/common/button.dart';
 import 'package:todyapp/core/constans/constans.dart';
 import 'package:todyapp/featurs/auth/screens/login_screen.dart';
+import 'package:todyapp/featurs/auth/screens/sign_up_screen.dart';
 import 'package:todyapp/main.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -96,7 +97,35 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
               text: "Google",
               onPressed: () {},
-            )
+            ),
+            SizedBox(height: height * 0.04),
+            // Signup link
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Don’t have an account?',
+                  style: TextStyle(color: AppColors.secondaryColor),
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SignUpScreen(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    'Sign Up',
+                    style: TextStyle(
+                      color: AppColors.blackColor,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
