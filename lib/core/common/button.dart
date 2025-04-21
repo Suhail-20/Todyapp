@@ -25,13 +25,13 @@ class FillButton extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                icon,
-                color: AppColors.whiteColor,
-              ),
-              SizedBox(
-                width: width * 0.02,
-              ),
+              if (icon != null) ...[
+                Icon(
+                  icon,
+                  color: AppColors.whiteColor,
+                ),
+                SizedBox(width: width * 0.02),
+              ],
               Text(
                 text,
                 style: TextStyle(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todyapp/core/common/button.dart';
 import 'package:todyapp/core/constans/constans.dart';
+import 'package:todyapp/featurs/auth/screens/login_screen.dart';
 import 'package:todyapp/main.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -47,7 +48,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
               child: FillButton(
                   icon: Icons.mail,
                   text: 'Continue with email',
-                  onPressed: () {}),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoginScreen(),
+                      ),
+                    );
+                  }),
             ),
             SizedBox(
               height: height * 0.02,
