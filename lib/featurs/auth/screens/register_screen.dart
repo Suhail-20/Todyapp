@@ -30,7 +30,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ),
       ),
       body: Column(
-        children: [],
+        children: [Image.asset(Constants.onBoard3)],
       ),
     );
   }
