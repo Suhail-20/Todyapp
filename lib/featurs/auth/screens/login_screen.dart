@@ -31,51 +31,55 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Column(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Center(
-                child: Text(
-                  " Your work faster and structured with Todyapp",
-                  style: TextStyle(color: AppColors.secondaryColor),
-                ),
-              ),
-              SizedBox(height: height * 0.03),
-              // Email text field
-              Padding(
-                padding: EdgeInsets.all(width * 0.03),
-                child: CustomTextField(
-                  controller: emailController,
-                  hint: "Email",
-                  keyboardType: TextInputType.emailAddress,
-                  validationType: TextFieldValidationType.email,
-                ),
-              ),
-
-              // Password text field
-              Padding(
-                padding: EdgeInsets.all(width * 0.03),
-                child: CustomPasswordField(
-                  controller: passwordController,
-                  hint: "Password",
-                  isHidden: isPasswordHidden,
-                  onToggle: () => setState(
-                    () => isPasswordHidden = !isPasswordHidden,
+              Column(
+                children: [
+                  Center(
+                    child: Text(
+                      " Your work faster and structured with Todyapp",
+                      style: TextStyle(color: AppColors.secondaryColor),
+                    ),
                   ),
-                  validationType: TextFieldValidationType.password,
-                ),
+                  SizedBox(height: height * 0.03),
+                  // Email text field
+                  Padding(
+                    padding: EdgeInsets.all(width * 0.03),
+                    child: CustomTextField(
+                      controller: emailController,
+                      hint: "Email",
+                      keyboardType: TextInputType.emailAddress,
+                      validationType: TextFieldValidationType.email,
+                    ),
+                  ),
+
+                  // Password text field
+                  Padding(
+                    padding: EdgeInsets.all(width * 0.03),
+                    child: CustomPasswordField(
+                      controller: passwordController,
+                      hint: "Password",
+                      isHidden: isPasswordHidden,
+                      onToggle: () => setState(
+                        () => isPasswordHidden = !isPasswordHidden,
+                      ),
+                      validationType: TextFieldValidationType.password,
+                    ),
+                  ),
+                  SizedBox(height: height * 0.04),
+                  // Login Button
+                ],
               ),
-              SizedBox(height: height * 0.04),
-              // Login Button
+              FillButton(
+                text: "Login",
+                onPressed: () {},
+              ),
             ],
           ),
-          FillButton(
-            text: "Login",
-            onPressed: () {},
-          )
-        ],
+        ),
       ),
     );
   }
