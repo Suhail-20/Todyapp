@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Constants {
-  static const logoPath = 'assets/images/logo.png';
+  static const logoPath = 'assets/images/Logo.svg';
   static const onBoard_3 = 'assets/images/Onboarding 3.png';
 }
 
