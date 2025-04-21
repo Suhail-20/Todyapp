@@ -27,16 +27,16 @@ class FillButton extends StatelessWidget {
             children: [
               Icon(
                 icon,
-                color: Colors.white,
+                color: AppColors.whiteColor,
               ),
               SizedBox(
-                width: width * 0.01,
+                width: width * 0.02,
               ),
               Text(
                 text,
                 style: TextStyle(
                   fontSize: width * 0.05,
-                  color: Colors.white,
+                  color: AppColors.whiteColor,
                 ),
               ),
             ],
@@ -47,34 +47,53 @@ class FillButton extends StatelessWidget {
   }
 }
 
-// class NotFillB extends StatelessWidget {
-//   final String text;
-//   final VoidCallback onPressed;
-//   const NotFillB({super.key, required this.text, required this.onPressed});
+class GoogleButton extends StatelessWidget {
+  final String text;
+  final VoidCallback onPressed;
+  final IconData? icon;
+  final dynamic? image;
+  const GoogleButton(
+      {super.key,
+      required this.text,
+      required this.onPressed,
+      this.icon,
+      this.image});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return GestureDetector(
-//       onTap: onPressed,
-//       child: Container(
-//         height: height * 0.07,
-//         width: width * 0.4,
-//         decoration: BoxDecoration(
-//           border: Border.all(color: ButtonColor.first, width: 2),
-//           borderRadius: BorderRadius.circular(width * 0.3),
-//           color: Colors.transparent, // No fill
-//         ),
-//         child: Center(
-//           child: Text(
-//             text,
-//             style: TextStyle(
-//               fontSize: width * 0.04,
-//               fontWeight: FontWeight.bold,
-//               color: ButtonColor.first,
-//             ),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        height: height * 0.07,
+        width: width * 0.9,
+        decoration: BoxDecoration(
+          border: Border.all(color: AppColors.googleColor),
+          borderRadius: BorderRadius.circular(width * 0.05),
+          color: AppColors.googleColor,
+        ),
+        child: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              image ??
+                  Icon(
+                    icon,
+                  ),
+              SizedBox(
+                width: width * 0.01,
+              ),
+              Text(
+                text,
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: width * 0.05,
+                  color: AppColors.blackColor,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

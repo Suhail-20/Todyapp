@@ -36,6 +36,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       ),
       body: SafeArea(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
               width: width,
@@ -80,6 +81,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
             SizedBox(
               height: height * 0.02,
             ),
+            GoogleButton(
+              image: Image.asset(
+                Constants.googlePath,
+                width: width * 0.1,
+              ),
+              text: "Google",
+              onPressed: () {},
+            )
           ],
         ),
       ),
