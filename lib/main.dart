@@ -1,5 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:todyapp/core/constans/constans.dart';
 import 'package:todyapp/featurs/auth/screens/login_screen.dart';
 import 'package:todyapp/featurs/auth/screens/register_screen.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
       },
       child: MaterialApp(
         theme: ThemeData(
+          textTheme: GoogleFonts.barlowTextTheme(),
           primaryColor: AppColors.primaryColor,
           colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
           useMaterial3: true,
