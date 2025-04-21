@@ -49,7 +49,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   onPressed: () {}),
             ),
             SizedBox(
-              height: height * 0.01,
+              height: height * 0.02,
             ),
             Row(
               children: [
@@ -78,7 +78,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ],
             ),
             SizedBox(
-              height: height * 0.01,
+              height: height * 0.02,
             ),
           ],
         ),
