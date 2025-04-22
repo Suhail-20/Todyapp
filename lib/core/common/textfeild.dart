@@ -45,14 +45,6 @@ class CustomTextField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Email Address',
-          style: TextStyle(
-            fontSize: width * 0.04,
-            color: AppColors.blackColor,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
         SizedBox(height: 6), // space between label and text field
         TextFormField(
           controller: controller,
@@ -122,14 +114,6 @@ class CustomPasswordField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Password',
-          style: TextStyle(
-            fontSize: width * 0.04,
-            color: AppColors.blackColor,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
         TextFormField(
           controller: controller,
           obscureText: isHidden,

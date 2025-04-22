@@ -45,28 +45,55 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   Center(
                     child: Text(
-                      " Your work faster and structured with Todyapp",
+                      "Your work faster and structured with Todyapp",
                       style: TextStyle(color: AppColors.secondaryColor),
                     ),
                   ),
                   SizedBox(height: height * 0.06),
+
                   // Email text field
-                  CustomTextField(
-                    controller: emailController,
-                    hint: "Email",
-                    keyboardType: TextInputType.emailAddress,
-                    validationType: TextFieldValidationType.email,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Email Address',
+                        style: TextStyle(
+                          fontSize: width * 0.04,
+                          color: AppColors.blackColor,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      CustomTextField(
+                        controller: emailController,
+                        hint: "Email",
+                        keyboardType: TextInputType.emailAddress,
+                        validationType: TextFieldValidationType.email,
+                      ),
+                    ],
                   ),
                   SizedBox(height: height * 0.03),
                   // Password text field
-                  CustomPasswordField(
-                    controller: passwordController,
-                    hint: "Password",
-                    isHidden: isPasswordHidden,
-                    onToggle: () => setState(
-                      () => isPasswordHidden = !isPasswordHidden,
-                    ),
-                    validationType: TextFieldValidationType.password,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Password',
+                        style: TextStyle(
+                          fontSize: width * 0.04,
+                          color: AppColors.blackColor,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      CustomPasswordField(
+                        controller: passwordController,
+                        hint: "Password",
+                        isHidden: isPasswordHidden,
+                        onToggle: () => setState(
+                          () => isPasswordHidden = !isPasswordHidden,
+                        ),
+                        validationType: TextFieldValidationType.password,
+                      ),
+                    ],
                   ),
                   SizedBox(height: height * 0.1),
                   FillButton(
