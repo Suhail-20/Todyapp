@@ -139,7 +139,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: height * 0.05),
+                  SizedBox(height: height * 0.06),
                   FillButton(
                     text: "Sign Up",
                     onPressed: () {},
