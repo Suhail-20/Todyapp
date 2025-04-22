@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "680622403947",
+    "project_id": "todyapp-a70d6",
+    "storage_bucket": "todyapp-a70d6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:680622403947:android:7c965e170138cd6fc1dc2e",
+        "android_client_info": {
+          "package_name": "com.example.todyapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYLX3U4eP7sYIWO1OLF48fKtZhrusJiBY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

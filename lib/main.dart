@@ -1,4 +1,5 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:todyapp/core/constans/constans.dart';
@@ -6,13 +7,17 @@ import 'package:todyapp/featurs/auth/screens/login_screen.dart';
 import 'package:todyapp/featurs/auth/screens/register_screen.dart';
 import 'package:todyapp/featurs/auth/screens/sign_up_screen.dart';
 import 'package:todyapp/featurs/home/home_page.dart';
+import 'package:todyapp/firebase_options.dart';
 
 import 'featurs/auth/screens/onboarding_screens/onboarding_page1.dart';
 import 'featurs/auth/screens/onboarding_screens/onboarding_page2.dart';
 
 var height;
 var width;
-void main() {
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(DevicePreview(enabled: true, builder: (context) => MyApp()));
 }
 
