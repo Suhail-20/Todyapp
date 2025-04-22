@@ -19,13 +19,32 @@ class _OnboardingPage2State extends State<OnboardingPage2> {
         backgroundColor: Colors.white,
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Image.asset(Constants.onBoarding1),
-          Text("Your convenience in \n making a todo list",
-          style: TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: width*0.075,
-          ),)
+          Stack(children: [ Image.asset(Constants.onBoarding1),
+            SizedBox(
+              width: width,
+              height: height*0.46,
+              child: Align(
+                alignment:Alignment.bottomCenter,
+                child: Text(
+                  "Your convenience in \n making a todo list",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: width * 0.075,
+                  ),
+                ),
+              ),
+            ),
+          ],),
+          Text(
+            "Here's a mobile platform that helps you create task\nor to list so that it can help you in every job\neasier and faster.",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontWeight: FontWeight.w600,
+              color: AppColors.secondaryColor,
+            ),
+          ),
         ],
       ),
     );
