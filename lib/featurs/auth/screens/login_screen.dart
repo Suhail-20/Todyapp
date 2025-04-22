@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todyapp/core/common/button.dart';
 import 'package:todyapp/core/common/textfeild.dart';
-import 'package:todyapp/core/constans/constans.dart';
+import 'package:todyapp/core/constants/constans.dart';
 import 'package:todyapp/core/enums/validation_type.dart';
 import 'package:todyapp/featurs/auth/screens/sign_up_screen.dart';
 import 'package:todyapp/main.dart';

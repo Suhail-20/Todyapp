@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todyapp/core/constans/constans.dart';
+import 'package:todyapp/core/constants/constans.dart';
 
 import '../../../../main.dart';
 
@@ -21,22 +21,25 @@ class _OnboardingPage2State extends State<OnboardingPage2> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Stack(children: [ Image.asset(Constants.onBoarding1),
-            SizedBox(
-              width: width,
-              height: height*0.46,
-              child: Align(
-                alignment:Alignment.bottomCenter,
-                child: Text(
-                  "Your convenience in \n making a todo list",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: width * 0.075,
+          Stack(
+            children: [
+              Image.asset(Constants.onBoarding1),
+              SizedBox(
+                width: width,
+                height: height * 0.46,
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Text(
+                    "Your convenience in \n making a todo list",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: width * 0.075,
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],),
+            ],
+          ),
           Text(
             "Here's a mobile platform that helps you create task\nor to list so that it can help you in every job\neasier and faster.",
             textAlign: TextAlign.center,

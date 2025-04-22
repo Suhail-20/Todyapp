@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:todyapp/core/constans/constans.dart';
+import 'package:todyapp/core/constants/constans.dart';
 import 'package:todyapp/main.dart';
 
 class OnboardingPage1 extends StatefulWidget {
@@ -24,19 +24,21 @@ class _OnboardingPage1State extends State<OnboardingPage1> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SvgPicture.asset(Constants.logoPath),
-            Text("Todyapp",style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w700,
-              fontSize: width*0.09,
-            ),
+            Text(
+              "Todyapp",
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w700,
+                fontSize: width * 0.09,
+              ),
             ),
             SizedBox(
-              height: height*0.03,
+              height: height * 0.03,
             ),
-            Text("The best to do list application for you",style: TextStyle(
-              color: AppColors.whiteColor,
-              fontWeight: FontWeight.w400
-            ),
+            Text(
+              "The best to do list application for you",
+              style: TextStyle(
+                  color: AppColors.whiteColor, fontWeight: FontWeight.w400),
             ),
           ],
         ),

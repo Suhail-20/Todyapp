@@ -2,7 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:todyapp/core/constans/constans.dart';
+import 'package:todyapp/core/constants/constans.dart';
 import 'package:todyapp/featurs/auth/screens/login_screen.dart';
 import 'package:todyapp/featurs/auth/screens/register_screen.dart';
 import 'package:todyapp/featurs/auth/screens/sign_up_screen.dart';
