@@ -21,20 +21,17 @@ class _OnboardingPage2State extends State<OnboardingPage2> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Stack(
-            children: [
-              Image.asset(Constants.onBoarding1),
-              SizedBox(
-                width: width,
-                height: height * 0.46,
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Text(
-                    "Your convenience in \n making a todo list",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: width * 0.075,
-                    ),
+          Stack(children: [ Image.asset(Constants.onBoarding1),
+            SizedBox(
+              width: width,
+              height: height*0.46,
+              child: Align(
+                alignment:Alignment.bottomCenter,
+                child: Text(
+                  "Your convenience in \n making a todo list",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: width * 0.075,
                   ),
                 ),
               ),

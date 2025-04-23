@@ -11,6 +11,7 @@ import 'package:todyapp/firebase_options.dart';
 
 import 'featurs/auth/screens/onboarding_screens/onboarding_page1.dart';
 import 'featurs/auth/screens/onboarding_screens/onboarding_page2.dart';
+import 'featurs/auth/screens/onboarding_screens/onboarding_page3.dart';
 
 var height;
 var width;
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         debugShowCheckedModeBanner: false,
-        home: RegisterScreen(),
+        home: OnboardingPage3(),
       ),
     );
   }
