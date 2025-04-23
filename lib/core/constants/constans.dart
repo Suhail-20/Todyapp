@@ -5,6 +5,7 @@ class Constants {
   static const onBoard_3 = 'assets/images/Onboarding 3.png';
   static const googlePath = 'assets/images/google.png';
   static const onBoarding1 = 'assets/images/Onboarding1.png';
+  static const onBoarding2 = 'assets/images/Onboarding2.png';
 }
 
 class AppColors {

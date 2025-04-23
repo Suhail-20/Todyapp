@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todyapp/core/constans/constans.dart';
+import 'package:todyapp/core/constants/constans.dart';
 
 import '../../../../main.dart';
 
