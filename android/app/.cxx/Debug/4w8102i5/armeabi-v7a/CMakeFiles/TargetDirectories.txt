@@ -1,0 +1,2 @@
+D:/Todyapp/android/app/.cxx/Debug/4w8102i5/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/Todyapp/android/app/.cxx/Debug/4w8102i5/armeabi-v7a/CMakeFiles/rebuild_cache.dir

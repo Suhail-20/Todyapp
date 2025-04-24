@@ -113,15 +113,15 @@ class SignInButton extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Padding(
-      padding: const EdgeInsets.all(18.0),
+      padding: EdgeInsets.symmetric(horizontal: width * 0.03),
       child: ElevatedButton.icon(
         onPressed: () => signInWithGoogle(context, ref),
         icon: Image.asset(
           Constants.googlePath,
-          width: 35,
+          width: width * 0.08,
         ),
         label: Text(
-          "Continue With Google",
+          "Google",
           style: TextStyle(
             color: AppColors.blackColor,
             fontWeight: FontWeight.w600,
@@ -130,7 +130,7 @@ class SignInButton extends ConsumerWidget {
         ),
         style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.googleColor,
-            minimumSize: Size(double.infinity, 50),
+            minimumSize: Size(width * 0.9, height * 0.07),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(width * 0.05),
             )),

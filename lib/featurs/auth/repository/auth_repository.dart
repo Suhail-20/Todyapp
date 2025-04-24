@@ -7,7 +7,6 @@ import 'package:riverpod/riverpod.dart';
 import 'package:todyapp/core/constants/firebase_constants.dart';
 import 'package:todyapp/core/failure.dart';
 import 'package:todyapp/core/providers/firebase_providers.dart';
-
 import 'package:todyapp/core/type_defs.dart';
 import 'package:todyapp/models/usermodel.dart';
 
@@ -19,8 +18,6 @@ final authRepositoryProvider = Provider(
 );
 
 final userIdProvider = StateProvider<String?>((ref) => null);
-
-// Replace with actual path
 
 class AuthRepository {
   final FirebaseFirestore _firestore;
@@ -37,11 +34,13 @@ class AuthRepository {
 
   CollectionReference get _users =>
       _firestore.collection(FirebaseConstants.usersCollection);
+
   Stream<User?> get authStateChange => _auth.authStateChanges();
 
   FutureEither<UserModel> signInWithGoogle(bool isFromLogin) async {
     try {
       UserCredential userCredential;
+
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
 
       if (googleUser == null) {
@@ -71,14 +70,19 @@ class AuthRepository {
           email: userCredential.user!.email,
         );
         await _users.doc(userCredential.user!.uid).set(userModel.toMap());
+        print("New user created and saved to Firestore");
       } else {
         userModel = await getUserData(userCredential.user!.uid).first;
+        print("Existing user fetched from Firestore");
       }
 
       return right(userModel);
     } on FirebaseAuthException catch (e) {
+      print("FirebaseAuthException: ${e.message}"); // Debugging line
       return left(Failure(e.message ?? "FirebaseAuth error occurred."));
-    } catch (e) {
+    } catch (e, st) {
+      print("Unexpected error: $e"); // Debugging line
+      print("Stack trace: $st"); // Debugging line
       return left(Failure(e.toString()));
     }
   }
@@ -92,5 +96,6 @@ class AuthRepository {
   void logOut() async {
     await _googleSignIn.signOut();
     await _auth.signOut();
+    print("User logged out successfully"); // Debugging line
   }
 }

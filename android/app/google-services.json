@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "680622403947-7rbjgit0id1rrpmnrf772jur6a9o3pvb.apps.googleusercontent.com",
+          "client_id": "680622403947-pp6qgrbjnr615kmkrtvtu002h97kq3gq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.todyapp",
-            "certificate_hash": "12d7bbbf94a1abd0fba0e123da716adf10b43994"
+            "certificate_hash": "b28a9e56201d87f6404636c3f4a8bdf7c04d70eb"
           }
         },
         {

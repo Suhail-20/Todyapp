@@ -41,6 +41,8 @@ class AuthController extends StateNotifier<bool> {
     final userResult = await _authRepository.signInWithGoogle(isFromLogin);
     state = false;
 
+    if (!context.mounted) return; // ✅ Prevents using disposed context
+
     userResult.fold(
       (failure) => showSnackBar(context, failure.message),
       (userModel) =>
