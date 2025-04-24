@@ -16,3 +16,7 @@ class AppColors {
   static const Color dividerColor = Color(0xffE0E5ED);
   static const Color googleColor = Color(0xffF3F5F9);
 }
+
+class CardColors {
+  static const Color blurColor = Color(0xffE7ECF5);
+}
