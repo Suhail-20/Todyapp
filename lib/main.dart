@@ -1,25 +1,27 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:todyapp/core/constants/constans.dart';
-import 'package:todyapp/featurs/auth/screens/login_screen.dart';
 import 'package:todyapp/featurs/auth/screens/register_screen.dart';
-import 'package:todyapp/featurs/auth/screens/sign_up_screen.dart';
-import 'package:todyapp/featurs/home/home_page.dart';
 import 'package:todyapp/firebase_options.dart';
-
-import 'featurs/auth/screens/onboarding_screens/onboarding_page1.dart';
-import 'featurs/auth/screens/onboarding_screens/onboarding_page2.dart';
-import 'featurs/auth/screens/onboarding_screens/onboarding_page3.dart';
 
 var height;
 var width;
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(DevicePreview(enabled: true, builder: (context) => MyApp()));
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  runApp(
+    DevicePreview(
+      enabled: true, // set to false in production
+      builder: (context) => const ProviderScope(child: MyApp()),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -41,7 +43,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         debugShowCheckedModeBanner: false,
-        home: OnboardingPage3(),
+        home: RegisterScreen(),
       ),
     );
   }

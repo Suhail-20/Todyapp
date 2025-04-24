@@ -2,7 +2,7 @@ class UserModel {
   String? name;
   String? email;
   String? password;
-  String? id;
+  String? uid;
 
   String? confirm;
 
@@ -10,16 +10,16 @@ class UserModel {
     this.name,
     this.email,
     this.password,
-    this.id,
+    this.uid,
     this.confirm,
   });
   Map<String, dynamic> toMap() {
     return {
-      "name": this.name,
-      "email": this.email,
-      "password": this.password,
-      "id": this.id,
-      "confirm": this.confirm,
+      "name": name,
+      "email": email,
+      "password": password,
+      "id": uid,
+      "confirm": confirm,
     };
   }
 
@@ -28,7 +28,7 @@ class UserModel {
       email: map["email"] ?? "",
       name: map["name"] ?? "",
       password: map["password"] ?? "",
-      id: map["id"] ?? "",
+      uid: map["id"] ?? "",
       confirm: map["confirm"] ?? "",
     );
   }
@@ -37,14 +37,14 @@ class UserModel {
     String? name,
     String? email,
     String? password,
-    String? id,
+    String? uid,
     String? confirm,
   }) {
     return UserModel(
       name: name ?? this.name,
       email: email ?? this.email,
       password: password ?? this.password,
-      id: id ?? this.id,
+      uid: uid ?? this.uid,
       confirm: confirm ?? this.confirm,
     );
   }

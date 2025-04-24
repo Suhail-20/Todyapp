@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todyapp/core/constants/constans.dart';
+import 'package:todyapp/featurs/auth/controller/auth_controller.dart';
 import 'package:todyapp/main.dart';
 
 class FillButton extends StatelessWidget {
@@ -47,12 +49,12 @@ class FillButton extends StatelessWidget {
   }
 }
 
-class GoogleButton extends StatelessWidget {
+class ImageIconButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final IconData? icon;
-  final dynamic? image;
-  const GoogleButton(
+  final dynamic image;
+  const ImageIconButton(
       {super.key,
       required this.text,
       required this.onPressed,
@@ -93,6 +95,45 @@ class GoogleButton extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class SignInButton extends ConsumerWidget {
+  final bool isFromLogin;
+  const SignInButton({super.key, this.isFromLogin = true});
+
+  void signInWithGoogle(BuildContext context, WidgetRef ref) {
+    ref
+        .read(authControllerProvider.notifier)
+        .signInWithGoogle(context, isFromLogin);
+  }
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Padding(
+      padding: const EdgeInsets.all(18.0),
+      child: ElevatedButton.icon(
+        onPressed: () => signInWithGoogle(context, ref),
+        icon: Image.asset(
+          Constants.googlePath,
+          width: 35,
+        ),
+        label: Text(
+          "Continue With Google",
+          style: TextStyle(
+            color: AppColors.blackColor,
+            fontWeight: FontWeight.w600,
+            fontSize: width * 0.05,
+          ),
+        ),
+        style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.googleColor,
+            minimumSize: Size(double.infinity, 50),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(width * 0.05),
+            )),
       ),
     );
   }

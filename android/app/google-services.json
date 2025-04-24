@@ -12,7 +12,20 @@
           "package_name": "com.example.todyapp"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "680622403947-7rbjgit0id1rrpmnrf772jur6a9o3pvb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.todyapp",
+            "certificate_hash": "12d7bbbf94a1abd0fba0e123da716adf10b43994"
+          }
+        },
+        {
+          "client_id": "680622403947-p74ofv6sdhjtqo0trmqldger8cqrrrvk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBYLX3U4eP7sYIWO1OLF48fKtZhrusJiBY"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "680622403947-p74ofv6sdhjtqo0trmqldger8cqrrrvk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "680622403947-63nmrf2tphfpu0js5hqfpb8mk3mctok0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.todyapp"
+              }
+            }
+          ]
         }
       }
     }

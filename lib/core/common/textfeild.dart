@@ -12,14 +12,14 @@ class CustomTextField extends StatelessWidget {
   final String? confirmPassword;
 
   const CustomTextField({
-    Key? key,
+    super.key,
     required this.controller,
     required this.hint,
     this.keyboardType = TextInputType.text,
     this.validator,
     this.validationType = TextFieldValidationType.none,
     this.confirmPassword,
-  }) : super(key: key);
+  });
   String? _defaultValidator(String? value) {
     final lowercaseEmailRegex = RegExp(
       r"^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$",
@@ -80,14 +80,14 @@ class CustomPasswordField extends StatelessWidget {
   final String? confirmPassword;
 
   const CustomPasswordField({
-    Key? key,
+    super.key,
     required this.controller,
     required this.hint,
     required this.isHidden,
     required this.onToggle,
     this.validationType = TextFieldValidationType.none,
     this.confirmPassword,
-  }) : super(key: key);
+  });
 
   String? _defaultValidator(String? value) {
     final passwordRegex = RegExp(

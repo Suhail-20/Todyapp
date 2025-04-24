@@ -37,24 +37,23 @@ class AuthRepository {
 
   CollectionReference get _users =>
       _firestore.collection(FirebaseConstants.usersCollection);
+  Stream<User?> get authStateChange => _auth.authStateChanges();
 
-  FutureEither<UserModel> signInWithGoogle({required bool isFromLogin}) async {
+  FutureEither<UserModel> signInWithGoogle(bool isFromLogin) async {
     try {
+      UserCredential userCredential;
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
 
       if (googleUser == null) {
         return left(Failure("Google Sign-In was cancelled"));
       }
 
-      final GoogleSignInAuthentication googleAuth =
-          await googleUser.authentication;
+      final googleAuth = await googleUser.authentication;
 
-      final AuthCredential credential = GoogleAuthProvider.credential(
+      final credential = GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
       );
-
-      UserCredential userCredential;
 
       if (isFromLogin) {
         userCredential = await _auth.signInWithCredential(credential);
@@ -63,26 +62,17 @@ class AuthRepository {
             await _auth.currentUser!.linkWithCredential(credential);
       }
 
-      final user = userCredential.user;
-      if (user == null) {
-        return left(Failure("Google sign-in failed: No user data."));
-      }
+      UserModel userModel;
 
-      final userDoc = await _users.doc(user.uid).get();
-
-      late UserModel userModel;
-
-      if (!userDoc.exists) {
+      if (userCredential.additionalUserInfo!.isNewUser) {
         userModel = UserModel(
-          name: user.displayName ?? "No Name",
-          email: user.email ?? "",
-          id: user.uid,
-          password: "",
-          confirm: "",
+          name: userCredential.user!.displayName ?? "No Name",
+          uid: userCredential.user!.uid,
+          email: userCredential.user!.email,
         );
-        await _users.doc(user.uid).set(userModel.toMap());
+        await _users.doc(userCredential.user!.uid).set(userModel.toMap());
       } else {
-        userModel = UserModel.fromMap(userDoc.data() as Map<String, dynamic>);
+        userModel = await getUserData(userCredential.user!.uid).first;
       }
 
       return right(userModel);
@@ -91,5 +81,16 @@ class AuthRepository {
     } catch (e) {
       return left(Failure(e.toString()));
     }
+  }
+
+  Stream<UserModel> getUserData(String uid) {
+    return _users.doc(uid).snapshots().map(
+          (event) => UserModel.fromMap(event.data() as Map<String, dynamic>),
+        );
+  }
+
+  void logOut() async {
+    await _googleSignIn.signOut();
+    await _auth.signOut();
   }
 }
