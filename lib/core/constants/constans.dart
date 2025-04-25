@@ -6,10 +6,19 @@ class Constants {
   static const googlePath = 'assets/images/google.png';
   static const onBoarding1 = 'assets/images/Onboarding1.png';
   static const onBoarding2 = 'assets/images/Onboarding2.png';
+  static const avatarDefault =
+      'https://external-preview.redd.it/5kh5OreeLd85QsqYO1Xz_4XSLYwZntfjqou-8fyBFoE.png?auto=webp&s=dbdabd04c399ce9c761ff899f5d38656d1de87c2';
+  static const homePath = 'assets/images/home_icon.svg';
+  static const inboxPath = 'assets/images/direct_inbox.svg';
+  static const upcomingPath = 'assets/images/calendar.svg';
+  static const filtterPath = 'assets/images/categories.svg';
+  static const projectPath = 'assets/images/paper_plus.svg';
+  static const setttingsPath = 'assets/images/settings.svg';
 }
 
 class AppColors {
   static const Color primaryColor = Color(0xff24A19C);
+  static const Color iconDefaultColor = Color(0xffA0AAB8);
   static const Color secondaryColor = Color(0xff767E8C);
   static const Color whiteColor = Color(0xffFFFFFF);
   static const Color blackColor = Color(0xff000000);

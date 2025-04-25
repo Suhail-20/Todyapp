@@ -5,7 +5,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:todyapp/core/constants/constans.dart';
 import 'package:todyapp/featurs/auth/screens/register_screen.dart';
-import 'package:todyapp/featurs/home/to_do_list_screen.dart';
+import 'package:todyapp/featurs/home/bottom/naviagtion_bar_page.dart';
+import 'package:todyapp/featurs/home/screens/to_do_list_screen.dart';
 import 'package:todyapp/firebase_options.dart';
 
 import 'featurs/auth/screens/onboarding_screens/onbording_screens.dart';
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         debugShowCheckedModeBanner: false,
-        home: OnbordingScreens(),
+        home: NaviagtionBarPage(),
       ),
     );
   }

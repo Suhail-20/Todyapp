@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:riverpod/riverpod.dart';
+import 'package:todyapp/core/constants/constans.dart';
 import 'package:todyapp/core/constants/firebase_constants.dart';
 import 'package:todyapp/core/failure.dart';
 import 'package:todyapp/core/providers/firebase_providers.dart';
@@ -23,7 +24,6 @@ class AuthRepository {
   final FirebaseFirestore _firestore;
   final FirebaseAuth _auth;
   final GoogleSignIn _googleSignIn;
-
   AuthRepository({
     required FirebaseFirestore firestore,
     required FirebaseAuth auth,
@@ -68,6 +68,8 @@ class AuthRepository {
           name: userCredential.user!.displayName ?? "No Name",
           uid: userCredential.user!.uid,
           email: userCredential.user!.email,
+          profilePic: userCredential.user!.photoURL ?? Constants.avatarDefault,
+         
         );
         await _users.doc(userCredential.user!.uid).set(userModel.toMap());
         print("New user created and saved to Firestore");

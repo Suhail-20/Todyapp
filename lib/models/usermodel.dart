@@ -3,7 +3,7 @@ class UserModel {
   String? email;
   String? password;
   String? uid;
-
+  String? profilePic;
   String? confirm;
 
   UserModel({
@@ -12,6 +12,7 @@ class UserModel {
     this.password,
     this.uid,
     this.confirm,
+    this.profilePic,
   });
   Map<String, dynamic> toMap() {
     return {
@@ -20,6 +21,7 @@ class UserModel {
       "password": password,
       "id": uid,
       "confirm": confirm,
+      'profilePic': profilePic,
     };
   }
 
@@ -30,6 +32,7 @@ class UserModel {
       password: map["password"] ?? "",
       uid: map["id"] ?? "",
       confirm: map["confirm"] ?? "",
+      profilePic: map['profilePic'] ?? '',
     );
   }
 
@@ -39,6 +42,7 @@ class UserModel {
     String? password,
     String? uid,
     String? confirm,
+    String? profilePic,
   }) {
     return UserModel(
       name: name ?? this.name,
@@ -46,6 +50,7 @@ class UserModel {
       password: password ?? this.password,
       uid: uid ?? this.uid,
       confirm: confirm ?? this.confirm,
+      profilePic: profilePic ?? this.profilePic,
     );
   }
 }

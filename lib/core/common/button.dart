@@ -1,7 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todyapp/core/constants/constans.dart';
 import 'package:todyapp/featurs/auth/controller/auth_controller.dart';
+import 'package:todyapp/featurs/home/screens/home_page.dart';
 import 'package:todyapp/main.dart';
 
 class FillButton extends StatelessWidget {
@@ -108,6 +110,13 @@ class SignInButton extends ConsumerWidget {
     ref
         .read(authControllerProvider.notifier)
         .signInWithGoogle(context, isFromLogin);
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(
+        builder: (context) => HomePage(),
+      ),
+      (route) => false,
+    );
   }
 
   @override
