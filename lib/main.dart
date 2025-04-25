@@ -8,6 +8,8 @@ import 'package:todyapp/featurs/auth/screens/register_screen.dart';
 import 'package:todyapp/featurs/home/to_do_list_screen.dart';
 import 'package:todyapp/firebase_options.dart';
 
+import 'featurs/auth/screens/onboarding_screens/onbording_screens.dart';
+
 var height;
 var width;
 
@@ -44,7 +46,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         debugShowCheckedModeBanner: false,
-        home: ToDoListScreen(),
+        home: OnbordingScreens(),
       ),
     );
   }

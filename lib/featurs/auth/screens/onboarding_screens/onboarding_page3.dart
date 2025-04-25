@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todyapp/core/constants/constans.dart';
 
+import '../../../../core/constants/constans.dart';
 import '../../../../main.dart';
 
 class OnboardingPage3 extends StatefulWidget {
