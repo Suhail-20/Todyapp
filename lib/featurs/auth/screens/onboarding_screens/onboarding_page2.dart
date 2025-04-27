@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todyapp/core/constants/constans.dart';
 
-import '../../../../main.dart';
-
 class OnboardingPage2 extends StatefulWidget {
   const OnboardingPage2({super.key});
 
@@ -25,15 +23,15 @@ class _OnboardingPage2State extends State<OnboardingPage2> {
             children: [
               Image.asset(Constants.onBoarding1),
               SizedBox(
-                width: width,
-                height: height * 0.46,
+                width: SizeConfig.width,
+                height: SizeConfig.height * 0.46,
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: Text(
                     "Your convenience in \n making a todo list",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: width * 0.075,
+                      fontSize: SizeConfig.width * 0.075,
                     ),
                   ),
                 ),

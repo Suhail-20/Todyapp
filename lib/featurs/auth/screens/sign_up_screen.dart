@@ -3,7 +3,6 @@ import 'package:todyapp/core/common/button.dart';
 import 'package:todyapp/core/common/textfeild.dart';
 import 'package:todyapp/core/constants/constans.dart';
 import 'package:todyapp/core/enums/validation_type.dart';
-import 'package:todyapp/main.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -39,8 +38,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
         child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: width * 0.03,
-              vertical: width * 0.12,
+              horizontal: SizeConfig.width * 0.03,
+              vertical: SizeConfig.width * 0.12,
             ),
             child: Form(
               key: _formKey,
@@ -52,14 +51,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       style: TextStyle(color: AppColors.secondaryColor),
                     ),
                   ),
-                  SizedBox(height: height * 0.04),
+                  SizedBox(height: SizeConfig.height * 0.04),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         'Full Name',
                         style: TextStyle(
-                          fontSize: width * 0.04,
+                          fontSize: SizeConfig.width * 0.04,
                           color: AppColors.blackColor,
                           fontWeight: FontWeight.w600,
                         ),
@@ -70,7 +69,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: height * 0.03),
+                  SizedBox(height: SizeConfig.height * 0.03),
                   // Email text field
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -78,7 +77,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       Text(
                         'Email Address',
                         style: TextStyle(
-                          fontSize: width * 0.04,
+                          fontSize: SizeConfig.width * 0.04,
                           color: AppColors.blackColor,
                           fontWeight: FontWeight.w600,
                         ),
@@ -91,7 +90,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: height * 0.03),
+                  SizedBox(height: SizeConfig.height * 0.03),
                   // Password text field
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -99,7 +98,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       Text(
                         'Password',
                         style: TextStyle(
-                          fontSize: width * 0.04,
+                          fontSize: SizeConfig.width * 0.04,
                           color: AppColors.blackColor,
                           fontWeight: FontWeight.w600,
                         ),
@@ -115,14 +114,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: height * 0.03),
+                  SizedBox(height: SizeConfig.height * 0.03),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         'Confirm Password',
                         style: TextStyle(
-                          fontSize: width * 0.04,
+                          fontSize: SizeConfig.width * 0.04,
                           color: AppColors.blackColor,
                           fontWeight: FontWeight.w600,
                         ),
@@ -139,13 +138,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: height * 0.06),
+                  SizedBox(height: SizeConfig.height * 0.06),
                   FillButton(
                     text: "Sign Up",
                     onPressed: () {},
                   ),
 
-                  SizedBox(height: height * 0.04),
+                  SizedBox(height: SizeConfig.height * 0.04),
                   // Signup link
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

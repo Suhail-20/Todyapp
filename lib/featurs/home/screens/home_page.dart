@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:todyapp/core/constants/constans.dart';
-import 'package:todyapp/main.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
@@ -25,7 +24,7 @@ class _HomePageState extends ConsumerState<HomePage> {
         ),
         actions: [
           Padding(
-            padding: EdgeInsets.all(width * 0.03),
+            padding: EdgeInsets.all(SizeConfig.width * 0.03),
             child: SvgPicture.asset(
               Constants.setttingsPath,
             ),
@@ -34,7 +33,7 @@ class _HomePageState extends ConsumerState<HomePage> {
       ),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: width * 0.05),
+          padding: EdgeInsets.symmetric(horizontal: SizeConfig.width * 0.05),
           child: Column(
             children: [
               Text(

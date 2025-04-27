@@ -7,7 +7,6 @@ import 'package:todyapp/featurs/auth/controller/auth_controller.dart';
 
 import 'package:todyapp/featurs/auth/screens/login_screen.dart';
 import 'package:todyapp/featurs/auth/screens/sign_up_screen.dart';
-import 'package:todyapp/main.dart';
 
 class RegisterScreen extends ConsumerWidget {
   const RegisterScreen({super.key});
@@ -43,8 +42,8 @@ class RegisterScreen extends ConsumerWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: width,
-                    height: height * 0.5,
+                    width: SizeConfig.width,
+                    height: SizeConfig.height * 0.5,
                     child: Image.asset(Constants.onBoard_3),
                   ),
                   Center(
@@ -61,14 +60,15 @@ class RegisterScreen extends ConsumerWidget {
                         }),
                   ),
                   SizedBox(
-                    height: height * 0.02,
+                    height: SizeConfig.height * 0.02,
                   ),
                   Row(
                     children: [
                       Expanded(
                         child: Padding(
                           padding: EdgeInsets.only(
-                              left: width * 0.08, right: width * 0.04),
+                              left: SizeConfig.width * 0.08,
+                              right: SizeConfig.width * 0.04),
                           child: Divider(
                             color: AppColors.dividerColor,
                           ),
@@ -81,7 +81,8 @@ class RegisterScreen extends ConsumerWidget {
                       Expanded(
                         child: Padding(
                           padding: EdgeInsets.only(
-                              left: width * 0.04, right: width * 0.08),
+                              left: SizeConfig.width * 0.04,
+                              right: SizeConfig.width * 0.08),
                           child: Divider(
                             color: AppColors.dividerColor,
                           ),
@@ -90,10 +91,10 @@ class RegisterScreen extends ConsumerWidget {
                     ],
                   ),
                   SizedBox(
-                    height: height * 0.02,
+                    height: SizeConfig.height * 0.02,
                   ),
                   SignInButton(),
-                  SizedBox(height: height * 0.04),
+                  SizedBox(height: SizeConfig.height * 0.04),
                   // Signup link
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

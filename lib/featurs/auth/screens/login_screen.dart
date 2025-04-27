@@ -4,7 +4,6 @@ import 'package:todyapp/core/common/textfeild.dart';
 import 'package:todyapp/core/constants/constans.dart';
 import 'package:todyapp/core/enums/validation_type.dart';
 import 'package:todyapp/featurs/auth/screens/sign_up_screen.dart';
-import 'package:todyapp/main.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -36,8 +35,8 @@ class _LoginScreenState extends State<LoginScreen> {
         child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: width * 0.03,
-              vertical: width * 0.12,
+              horizontal: SizeConfig.width * 0.03,
+              vertical: SizeConfig.width * 0.12,
             ),
             child: Form(
               key: _formKey,
@@ -49,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: TextStyle(color: AppColors.secondaryColor),
                     ),
                   ),
-                  SizedBox(height: height * 0.06),
+                  SizedBox(height: SizeConfig.height * 0.06),
 
                   // Email text field
                   Column(
@@ -58,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Text(
                         'Email Address',
                         style: TextStyle(
-                          fontSize: width * 0.04,
+                          fontSize: SizeConfig.width * 0.04,
                           color: AppColors.blackColor,
                           fontWeight: FontWeight.w600,
                         ),
@@ -71,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: height * 0.03),
+                  SizedBox(height: SizeConfig.height * 0.03),
                   // Password text field
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Text(
                         'Password',
                         style: TextStyle(
-                          fontSize: width * 0.04,
+                          fontSize: SizeConfig.width * 0.04,
                           color: AppColors.blackColor,
                           fontWeight: FontWeight.w600,
                         ),
@@ -95,13 +94,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: height * 0.1),
+                  SizedBox(height: SizeConfig.height * 0.1),
                   FillButton(
                     text: "Login",
                     onPressed: () {},
                   ),
 
-                  SizedBox(height: height * 0.04),
+                  SizedBox(height: SizeConfig.height * 0.04),
                   // Signup link
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

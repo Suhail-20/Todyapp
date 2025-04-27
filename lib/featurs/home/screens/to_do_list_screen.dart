@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todyapp/core/common/button.dart';
 import 'package:todyapp/core/common/coloredcard.dart';
 import 'package:todyapp/core/constants/constans.dart';
-import 'package:todyapp/main.dart';
 
 class ToDoListScreen extends ConsumerWidget {
   const ToDoListScreen({super.key});
@@ -38,11 +37,12 @@ class ToDoListScreen extends ConsumerWidget {
                 style: TextStyle(color: AppColors.secondaryColor),
               ),
             ),
-            SizedBox(height: height * 0.04),
+            SizedBox(height: SizeConfig.height * 0.04),
             Expanded(
               child: ListView.separated(
                 itemCount: colors.length,
-                separatorBuilder: (_, __) => SizedBox(height: height * 0.02),
+                separatorBuilder: (_, __) =>
+                    SizedBox(height: SizeConfig.height * 0.02),
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
@@ -57,7 +57,7 @@ class ToDoListScreen extends ConsumerWidget {
               text: "Open Todyapp",
               onPressed: () {},
             ),
-            SizedBox(height: height * 0.04),
+            SizedBox(height: SizeConfig.height * 0.04),
           ],
         ),
       ),

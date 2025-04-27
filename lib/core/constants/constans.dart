@@ -14,6 +14,8 @@ class Constants {
   static const filtterPath = 'assets/images/categories.svg';
   static const projectPath = 'assets/images/paper_plus.svg';
   static const setttingsPath = 'assets/images/settings.svg';
+  static const searchPath = 'assets/images/search_normal.svg';
+  static const arrowBackPath = 'assets/images/arrow_back.svg';
 }
 
 class AppColors {
@@ -28,4 +30,16 @@ class AppColors {
 
 class CardColors {
   static const Color blurColor = Color(0xffE7ECF5);
+}
+
+class SizeConfig {
+  static late MediaQueryData _mediaQueryData;
+  static late double width;
+  static late double height;
+
+  static void init(BuildContext context) {
+    _mediaQueryData = MediaQuery.of(context);
+    width = _mediaQueryData.size.width;
+    height = _mediaQueryData.size.height;
+  }
 }

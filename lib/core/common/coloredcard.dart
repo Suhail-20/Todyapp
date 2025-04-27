@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todyapp/core/constants/constans.dart';
-import 'package:todyapp/main.dart';
 
 class ColoredCard extends ConsumerWidget {
   final Color topColor;
@@ -10,7 +9,7 @@ class ColoredCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: width * 0.05),
+      padding: EdgeInsets.symmetric(horizontal: SizeConfig.width * 0.05),
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
@@ -27,7 +26,7 @@ class ColoredCard extends ConsumerWidget {
           children: [
             // Colored Top Bar
             Container(
-              height: height * 0.04,
+              height: SizeConfig.height * 0.04,
               decoration: BoxDecoration(
                 color: topColor,
                 borderRadius: const BorderRadius.only(
@@ -56,18 +55,18 @@ class ColoredCard extends ConsumerWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                            height: height * 0.01,
-                            width: width * 0.6,
+                            height: SizeConfig.height * 0.01,
+                            width: SizeConfig.width * 0.6,
                             color: CardColors.blurColor),
                         const SizedBox(height: 8),
                         Container(
-                            height: height * 0.01,
-                            width: width * 0.4,
+                            height: SizeConfig.height * 0.01,
+                            width: SizeConfig.width * 0.4,
                             color: CardColors.blurColor),
                         const SizedBox(height: 8),
                         Container(
-                            height: height * 0.01,
-                            width: width * 0.6,
+                            height: SizeConfig.height * 0.01,
+                            width: SizeConfig.width * 0.6,
                             color: CardColors.blurColor),
                       ],
                     ),

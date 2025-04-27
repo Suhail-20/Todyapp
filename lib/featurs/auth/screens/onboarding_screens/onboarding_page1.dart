@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:todyapp/core/constants/constans.dart';
-import 'package:todyapp/main.dart';
 
 class OnboardingPage1 extends StatefulWidget {
   const OnboardingPage1({super.key});
@@ -28,11 +27,11 @@ class _OnboardingPage1State extends State<OnboardingPage1> {
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w700,
-                fontSize: width * 0.09,
+                fontSize: SizeConfig.width * 0.09,
               ),
             ),
             SizedBox(
-              height: height * 0.03,
+              height: SizeConfig.height * 0.03,
             ),
             Text(
               "The best to do list application for you",

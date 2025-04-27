@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:todyapp/core/constants/constans.dart';
+import 'package:todyapp/featurs/Filters/screens/filters_screen.dart';
 import 'package:todyapp/featurs/home/screens/home_page.dart';
-import 'package:todyapp/main.dart';
+import 'package:todyapp/featurs/inbox/screens/inbox_screen.dart';
+import 'package:todyapp/featurs/project/screens/project_screen.dart';
+import 'package:todyapp/featurs/upcoming/screens/upcoming_screen.dart';
 
 class NaviagtionBarPage extends ConsumerStatefulWidget {
   const NaviagtionBarPage({super.key});
@@ -16,7 +19,13 @@ class NaviagtionBarPage extends ConsumerStatefulWidget {
 
 class _NaviagtionBarPageState extends ConsumerState<NaviagtionBarPage> {
   int selectIndex = 0;
-  List pages = [HomePage()];
+  List pages = [
+    HomePage(),
+    InboxScreen(),
+    UpcomingScreen(),
+    FiltersScreen(),
+    ProjectScreen(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,16 +43,18 @@ class _NaviagtionBarPageState extends ConsumerState<NaviagtionBarPage> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
-                  height: height * 0.0035,
-                  width: width * 0.05,
+                  height: SizeConfig.height * 0.0035,
+                  width: SizeConfig.width * 0.05,
                   decoration: BoxDecoration(
                     color: selectIndex == 0
                         ? AppColors.primaryColor
                         : Colors.transparent,
-                    borderRadius: BorderRadius.circular(width * 0.05),
+                    borderRadius: BorderRadius.circular(
+                      SizeConfig.width * 0.05,
+                    ),
                   ),
                 ),
-                SizedBox(height: height * 0.007),
+                SizedBox(height: SizeConfig.height * 0.007),
                 SvgPicture.asset(
                   Constants.homePath,
                   colorFilter: ColorFilter.mode(
@@ -62,16 +73,17 @@ class _NaviagtionBarPageState extends ConsumerState<NaviagtionBarPage> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
-                  height: height * 0.0035,
-                  width: width * 0.05,
+                  height: SizeConfig.height * 0.0035,
+                  width: SizeConfig.width * 0.05,
                   decoration: BoxDecoration(
                     color: selectIndex == 1
                         ? AppColors.primaryColor
                         : Colors.transparent,
-                    borderRadius: BorderRadius.circular(width * 0.05),
+                    borderRadius:
+                        BorderRadius.circular(SizeConfig.width * 0.05),
                   ),
                 ),
-                SizedBox(height: height * 0.007),
+                SizedBox(height: SizeConfig.height * 0.007),
                 SvgPicture.asset(
                   Constants.inboxPath,
                   colorFilter: ColorFilter.mode(
@@ -90,16 +102,17 @@ class _NaviagtionBarPageState extends ConsumerState<NaviagtionBarPage> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
-                  height: height * 0.0035,
-                  width: width * 0.05,
+                  height: SizeConfig.height * 0.0035,
+                  width: SizeConfig.width * 0.05,
                   decoration: BoxDecoration(
                     color: selectIndex == 2
                         ? AppColors.primaryColor
                         : Colors.transparent,
-                    borderRadius: BorderRadius.circular(width * 0.05),
+                    borderRadius:
+                        BorderRadius.circular(SizeConfig.width * 0.05),
                   ),
                 ),
-                SizedBox(height: height * 0.007),
+                SizedBox(height: SizeConfig.height * 0.007),
                 SvgPicture.asset(
                   Constants.upcomingPath,
                   colorFilter: ColorFilter.mode(
@@ -118,16 +131,17 @@ class _NaviagtionBarPageState extends ConsumerState<NaviagtionBarPage> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
-                  height: height * 0.0035,
-                  width: width * 0.05,
+                  height: SizeConfig.height * 0.0035,
+                  width: SizeConfig.width * 0.05,
                   decoration: BoxDecoration(
                     color: selectIndex == 3
                         ? AppColors.primaryColor
                         : Colors.transparent,
-                    borderRadius: BorderRadius.circular(width * 0.05),
+                    borderRadius:
+                        BorderRadius.circular(SizeConfig.width * 0.05),
                   ),
                 ),
-                SizedBox(height: height * 0.007),
+                SizedBox(height: SizeConfig.height * 0.007),
                 SvgPicture.asset(
                   Constants.filtterPath,
                   colorFilter: ColorFilter.mode(
@@ -146,16 +160,17 @@ class _NaviagtionBarPageState extends ConsumerState<NaviagtionBarPage> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
-                  height: height * 0.0035,
-                  width: width * 0.05,
+                  height: SizeConfig.height * 0.0035,
+                  width: SizeConfig.width * 0.05,
                   decoration: BoxDecoration(
                     color: selectIndex == 4
                         ? AppColors.primaryColor
                         : Colors.transparent,
-                    borderRadius: BorderRadius.circular(width * 0.05),
+                    borderRadius:
+                        BorderRadius.circular(SizeConfig.width * 0.05),
                   ),
                 ),
-                SizedBox(height: height * 0.007),
+                SizedBox(height: SizeConfig.width * 0.007),
                 SvgPicture.asset(
                   Constants.projectPath,
                   colorFilter: ColorFilter.mode(

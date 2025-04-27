@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todyapp/core/constants/constans.dart';
 import 'package:todyapp/core/enums/validation_type.dart';
-import 'package:todyapp/main.dart';
 
 class CustomTextField extends StatelessWidget {
   final TextEditingController controller;
@@ -56,11 +55,11 @@ class CustomTextField extends StatelessWidget {
             filled: true,
             hintText: "$hint@example.com",
             contentPadding: EdgeInsets.symmetric(
-              vertical: width * 0.06,
-              horizontal: width * 0.03,
+              vertical: SizeConfig.width * 0.06,
+              horizontal: SizeConfig.width * 0.03,
             ),
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(width * 0.02),
+              borderRadius: BorderRadius.circular(SizeConfig.width * 0.02),
               borderSide: BorderSide.none,
             ),
           ),
@@ -122,13 +121,14 @@ class CustomPasswordField extends StatelessWidget {
             filled: true,
             hintText: "Enter your $hint",
             contentPadding: EdgeInsets.symmetric(
-                vertical: width * 0.06, horizontal: width * 0.04),
+                vertical: SizeConfig.width * 0.06,
+                horizontal: SizeConfig.width * 0.04),
             suffixIcon: IconButton(
               icon: Icon(isHidden ? Icons.visibility_off : Icons.visibility),
               onPressed: onToggle,
             ),
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(width * 0.02),
+              borderRadius: BorderRadius.circular(SizeConfig.width * 0.02),
               borderSide: BorderSide.none,
             ),
           ),

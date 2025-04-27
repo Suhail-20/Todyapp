@@ -11,9 +11,6 @@ import 'package:todyapp/firebase_options.dart';
 
 import 'featurs/auth/screens/onboarding_screens/onbording_screens.dart';
 
-var height;
-var width;
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -33,11 +30,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    height = MediaQuery.of(context).size.height;
-    width = MediaQuery.of(context).size.width;
+    SizeConfig.init(context);
+
     return GestureDetector(
       onTap: () {
-        FocusManager.instance.primaryFocus!.unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
       },
       child: MaterialApp(
         theme: ThemeData(
