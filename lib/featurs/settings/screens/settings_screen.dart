@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:todyapp/core/constants/constans.dart';
+
 import 'package:todyapp/theme/pallete.dart';
 
 class SettingsScreen extends ConsumerStatefulWidget {

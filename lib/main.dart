@@ -7,6 +7,7 @@ import 'package:todyapp/core/constants/constans.dart';
 import 'package:todyapp/featurs/auth/screens/register_screen.dart';
 import 'package:todyapp/featurs/home/bottom/naviagtion_bar_page.dart';
 import 'package:todyapp/featurs/home/screens/to_do_list_screen.dart';
+import 'package:todyapp/featurs/settings/screens/settings_screen.dart';
 import 'package:todyapp/firebase_options.dart';
 import 'package:todyapp/theme/pallete.dart';
 
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         debugShowCheckedModeBanner: false,
-        home: NaviagtionBarPage(),
+        home: SettingsScreen(),
       ),
     );
   }

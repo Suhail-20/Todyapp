@@ -16,7 +16,7 @@ class Constants {
   static const setttingsPath = 'assets/images/settings.svg';
   static const searchPath = 'assets/images/search_normal.svg';
   static const arrowBackPath = 'assets/images/arrow_back.svg';
-  static const arrowRightPath = 'assets/images/arrow_Right.svg';
+  static const arrowRightPath = 'assets/images/arrow_right.svg';
   static const editPath = 'assets/images/edit_2.svg';
   static const keyPath = 'assets/images/key.svg';
   static const logoutPath = 'assets/images/logout.svg';
@@ -35,6 +35,12 @@ class SizeConfig {
 
   static void init(BuildContext context) {
     _mediaQueryData = MediaQuery.of(context);
+
+    // Avoid issues if init is called before MediaQuery data is available
+    if (_mediaQueryData.size.width == 0 || _mediaQueryData.size.height == 0) {
+      throw Exception("MediaQuery data is not yet available!");
+    }
+
     width = _mediaQueryData.size.width;
     height = _mediaQueryData.size.height;
   }
