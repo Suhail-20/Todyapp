@@ -1,8 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todyapp/core/constants/constans.dart';
 import 'package:todyapp/featurs/auth/controller/auth_controller.dart';
 import 'package:todyapp/featurs/home/screens/home_page.dart';
+import 'package:todyapp/theme/pallete.dart';
 
 class FillButton extends StatelessWidget {
   final String text;
@@ -110,7 +112,7 @@ class SignInButton extends ConsumerWidget {
         .signInWithGoogle(context, isFromLogin);
     Navigator.pushAndRemoveUntil(
       context,
-      MaterialPageRoute(
+      CupertinoPageRoute(
         builder: (context) => HomePage(),
       ),
       (route) => false,

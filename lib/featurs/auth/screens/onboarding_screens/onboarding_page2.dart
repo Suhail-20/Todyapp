@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todyapp/core/constants/constans.dart';
+import 'package:todyapp/theme/pallete.dart';
 
 class OnboardingPage2 extends StatefulWidget {
   const OnboardingPage2({super.key});

@@ -16,20 +16,16 @@ class Constants {
   static const setttingsPath = 'assets/images/settings.svg';
   static const searchPath = 'assets/images/search_normal.svg';
   static const arrowBackPath = 'assets/images/arrow_back.svg';
-}
-
-class AppColors {
-  static const Color primaryColor = Color(0xff24A19C);
-  static const Color iconDefaultColor = Color(0xffA0AAB8);
-  static const Color secondaryColor = Color(0xff767E8C);
-  static const Color whiteColor = Color(0xffFFFFFF);
-  static const Color blackColor = Color(0xff000000);
-  static const Color dividerColor = Color(0xffE0E5ED);
-  static const Color googleColor = Color(0xffF3F5F9);
-}
-
-class CardColors {
-  static const Color blurColor = Color(0xffE7ECF5);
+  static const arrowRightPath = 'assets/images/arrow_Right.svg';
+  static const editPath = 'assets/images/edit_2.svg';
+  static const keyPath = 'assets/images/key.svg';
+  static const logoutPath = 'assets/images/logout.svg';
+  static const magicPenPath = 'assets/images/magicpen.svg';
+  static const medalStarPath = 'assets/images/medal_star.svg';
+  static const messageQuestionPath = 'assets/images/message_question.svg';
+  static const profilePath = 'assets/images/profile.svg';
+  static const sunPath = 'assets/images/sun.svg';
+  static const weightPath = 'assets/images/weight.svg';
 }
 
 class SizeConfig {

@@ -1,9 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:todyapp/core/common/button.dart';
 import 'package:todyapp/core/common/textfeild.dart';
 import 'package:todyapp/core/constants/constans.dart';
 import 'package:todyapp/core/enums/validation_type.dart';
 import 'package:todyapp/featurs/auth/screens/sign_up_screen.dart';
+import 'package:todyapp/theme/pallete.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -113,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
+                            CupertinoPageRoute(
                               builder: (context) => const SignUpScreen(),
                             ),
                           );

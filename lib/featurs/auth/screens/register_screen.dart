@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todyapp/core/common/button.dart';
@@ -7,6 +8,7 @@ import 'package:todyapp/featurs/auth/controller/auth_controller.dart';
 
 import 'package:todyapp/featurs/auth/screens/login_screen.dart';
 import 'package:todyapp/featurs/auth/screens/sign_up_screen.dart';
+import 'package:todyapp/theme/pallete.dart';
 
 class RegisterScreen extends ConsumerWidget {
   const RegisterScreen({super.key});
@@ -53,7 +55,7 @@ class RegisterScreen extends ConsumerWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
+                            CupertinoPageRoute(
                               builder: (context) => LoginScreen(),
                             ),
                           );
@@ -107,7 +109,7 @@ class RegisterScreen extends ConsumerWidget {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
+                            CupertinoPageRoute(
                               builder: (context) => const SignUpScreen(),
                             ),
                           );

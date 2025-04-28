@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todyapp/core/common/button.dart';
 import 'package:todyapp/core/common/coloredcard.dart';
 import 'package:todyapp/core/constants/constans.dart';
+import 'package:todyapp/theme/pallete.dart';
 
 class ToDoListScreen extends ConsumerWidget {
   const ToDoListScreen({super.key});

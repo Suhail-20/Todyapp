@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todyapp/core/constants/constans.dart';
 import 'package:todyapp/core/enums/validation_type.dart';
+import 'package:todyapp/theme/pallete.dart';
 
 class CustomTextField extends StatelessWidget {
   final TextEditingController controller;

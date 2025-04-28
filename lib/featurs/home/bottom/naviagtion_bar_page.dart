@@ -8,6 +8,7 @@ import 'package:todyapp/featurs/home/screens/home_page.dart';
 import 'package:todyapp/featurs/inbox/screens/inbox_screen.dart';
 import 'package:todyapp/featurs/project/screens/project_screen.dart';
 import 'package:todyapp/featurs/upcoming/screens/upcoming_screen.dart';
+import 'package:todyapp/theme/pallete.dart';
 
 class NaviagtionBarPage extends ConsumerStatefulWidget {
   const NaviagtionBarPage({super.key});
@@ -48,7 +49,7 @@ class _NaviagtionBarPageState extends ConsumerState<NaviagtionBarPage> {
                   decoration: BoxDecoration(
                     color: selectIndex == 0
                         ? AppColors.primaryColor
-                        : Colors.transparent,
+                        : AppColors.transparentColor,
                     borderRadius: BorderRadius.circular(
                       SizeConfig.width * 0.05,
                     ),
@@ -78,7 +79,7 @@ class _NaviagtionBarPageState extends ConsumerState<NaviagtionBarPage> {
                   decoration: BoxDecoration(
                     color: selectIndex == 1
                         ? AppColors.primaryColor
-                        : Colors.transparent,
+                        : AppColors.transparentColor,
                     borderRadius:
                         BorderRadius.circular(SizeConfig.width * 0.05),
                   ),
@@ -107,7 +108,7 @@ class _NaviagtionBarPageState extends ConsumerState<NaviagtionBarPage> {
                   decoration: BoxDecoration(
                     color: selectIndex == 2
                         ? AppColors.primaryColor
-                        : Colors.transparent,
+                        : AppColors.transparentColor,
                     borderRadius:
                         BorderRadius.circular(SizeConfig.width * 0.05),
                   ),
@@ -136,7 +137,7 @@ class _NaviagtionBarPageState extends ConsumerState<NaviagtionBarPage> {
                   decoration: BoxDecoration(
                     color: selectIndex == 3
                         ? AppColors.primaryColor
-                        : Colors.transparent,
+                        : AppColors.transparentColor,
                     borderRadius:
                         BorderRadius.circular(SizeConfig.width * 0.05),
                   ),
@@ -165,7 +166,7 @@ class _NaviagtionBarPageState extends ConsumerState<NaviagtionBarPage> {
                   decoration: BoxDecoration(
                     color: selectIndex == 4
                         ? AppColors.primaryColor
-                        : Colors.transparent,
+                        : AppColors.transparentColor,
                     borderRadius:
                         BorderRadius.circular(SizeConfig.width * 0.05),
                   ),

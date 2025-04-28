@@ -1,7 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:todyapp/core/constants/constans.dart';
+import 'package:todyapp/featurs/settings/screens/settings_screen.dart';
+import 'package:todyapp/theme/pallete.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
@@ -25,8 +28,19 @@ class _HomePageState extends ConsumerState<HomePage> {
         actions: [
           Padding(
             padding: EdgeInsets.all(SizeConfig.width * 0.03),
-            child: SvgPicture.asset(
-              Constants.setttingsPath,
+            child: InkWell(
+              onTap: () => Navigator.push(
+                  context,
+                  CupertinoPageRoute(
+                    builder: (context) => SettingsScreen(),
+                  )),
+              child: SvgPicture.asset(
+                Constants.setttingsPath,
+                colorFilter: ColorFilter.mode(
+                  AppColors.secondaryColor,
+                  BlendMode.srcIn,
+                ),
+              ),
             ),
           ),
         ],

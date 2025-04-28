@@ -3,6 +3,7 @@ import 'package:todyapp/core/constants/constans.dart';
 import 'package:todyapp/featurs/auth/screens/onboarding_screens/onboarding_page2.dart';
 import 'package:todyapp/featurs/auth/screens/onboarding_screens/onboarding_page3.dart';
 import 'package:todyapp/featurs/auth/screens/register_screen.dart';
+import 'package:todyapp/theme/pallete.dart';
 
 import 'onboarding_page1.dart';
 
