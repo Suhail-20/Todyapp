@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:todyapp/core/constants/constans.dart';
 import 'package:todyapp/featurs/settings/screens/settings_screen.dart';
-import 'package:todyapp/featurs/upcoming/screens/upcoming_screen.dart';
+
 import 'package:todyapp/theme/pallete.dart';
 
 class HomePage extends ConsumerStatefulWidget {
@@ -17,9 +17,7 @@ class _HomePageState extends ConsumerState<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.whiteColor,
       appBar: AppBar(
-        backgroundColor: AppColors.whiteColor,
         title: Text(
           'Today',
           style: TextStyle(
@@ -27,19 +25,23 @@ class _HomePageState extends ConsumerState<HomePage> {
           ),
         ),
         actions: [
-          Padding(
-            padding: EdgeInsets.all(SizeConfig.width * 0.03),
-            child: InkWell(
-              onTap: () => Navigator.push(
-                  context,
-                  CupertinoPageRoute(
-                    builder: (context) => SettingsScreen(),
-                  )),
-              child: SvgPicture.asset(
-                Constants.setttingsPath,
-                colorFilter: ColorFilter.mode(
-                  AppColors.secondaryColor,
-                  BlendMode.srcIn,
+          InkWell(
+            onTap: () => Navigator.push(
+                context,
+                CupertinoPageRoute(
+                  builder: (context) => SettingsScreen(),
+                )),
+            child: SizedBox(
+              width: SizeConfig.width * 0.15,
+              child: Center(
+                child: SvgPicture.asset(
+                  Constants.setttingsPath,
+                  colorFilter: ColorFilter.mode(
+                    Theme.of(context).brightness == Brightness.dark
+                        ? AppColors.iconDefaultColor // White in dark mode
+                        : AppColors.secondaryColor, // Black in light mode
+                    BlendMode.srcIn,
+                  ),
                 ),
               ),
             ),
@@ -53,7 +55,10 @@ class _HomePageState extends ConsumerState<HomePage> {
             children: [
               Text(
                 "Best platform for creating to-do lists",
-                style: TextStyle(color: AppColors.secondaryColor),
+                style: TextStyle(
+                    color: Theme.of(context).brightness == Brightness.dark
+                        ? AppColors.whiteColor
+                        : AppColors.secondaryColor),
               ),
             ],
           ),

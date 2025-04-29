@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:todyapp/core/constants/constans.dart';
+import 'package:todyapp/featurs/auth/controller/auth_controller.dart';
 
 import 'package:todyapp/theme/pallete.dart';
+import 'package:todyapp/theme/theme_notifier.dart';
 
 class SettingsScreen extends ConsumerStatefulWidget {
   const SettingsScreen({super.key});
@@ -13,12 +15,15 @@ class SettingsScreen extends ConsumerStatefulWidget {
 }
 
 class _SettingsScreenState extends ConsumerState<SettingsScreen> {
+  Future<void> logOut(WidgetRef ref) async {
+    await ref.read(authControllerProvider.notifier).logOut();
+  }
+
   @override
   Widget build(BuildContext context) {
+    final themeMode = ref.watch(themeNotifierProvider);
     return Scaffold(
-      backgroundColor: AppColors.whiteColor,
       appBar: AppBar(
-        backgroundColor: AppColors.whiteColor,
         centerTitle: true,
         title: Text(
           'Settings',
@@ -33,7 +38,9 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             child: SvgPicture.asset(
               Constants.arrowBackPath,
               colorFilter: ColorFilter.mode(
-                AppColors.blackColor,
+                Theme.of(context).brightness == Brightness.dark
+                    ? AppColors.iconDefaultColor // White in dark mode
+                    : AppColors.blackColor, // Black in light mode
                 BlendMode.srcIn,
               ),
             ),
@@ -45,7 +52,9 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             child: SvgPicture.asset(
               Constants.searchPath,
               colorFilter: ColorFilter.mode(
-                AppColors.blackColor,
+                Theme.of(context).brightness == Brightness.dark
+                    ? AppColors.iconDefaultColor // White in dark mode
+                    : AppColors.blackColor, // Black in light mode
                 BlendMode.srcIn,
               ),
             ),
@@ -69,29 +78,22 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                       radius: SizeConfig.width * 0.14,
                     ),
                     Positioned(
-                      top: SizeConfig.height * 0.045,
+                      top: SizeConfig.height * 0.1,
                       left: SizeConfig.width * 0.55,
-                      child: Container(
-                        width: SizeConfig.width * 0.10,
-                        height: SizeConfig.height * 0.14,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: AppColors.whiteColor,
-                          boxShadow: [
-                            BoxShadow(
-                              color: CardColors.blurColor,
-                              blurRadius: SizeConfig.width * 0.015,
-                              offset: Offset(2, 3),
-                            ),
-                          ],
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.all(SizeConfig.width * 0.02),
-                          child: SvgPicture.asset(
-                            Constants.editPath,
-                            colorFilter: ColorFilter.mode(
-                              AppColors.primaryColor,
-                              BlendMode.srcIn,
+                      child: Material(
+                        elevation: 4, // Adjust elevation as needed
+                        shape: CircleBorder(),
+                        child: CircleAvatar(
+                          radius: SizeConfig.width * 0.04,
+                          backgroundColor: AppColors.whiteColor,
+                          child: Padding(
+                            padding: EdgeInsets.all(SizeConfig.width * 0.02),
+                            child: SvgPicture.asset(
+                              Constants.editPath,
+                              colorFilter: ColorFilter.mode(
+                                AppColors.primaryColor,
+                                BlendMode.srcIn,
+                              ),
                             ),
                           ),
                         ),
@@ -207,6 +209,46 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                       color: AppColors.secondaryColor,
                       fontWeight: FontWeight.w600),
                 ),
+                trailing: Switch(
+                  value: themeMode == ThemeMode.dark,
+                  onChanged: (bool value) {
+                    // Toggle the theme when the switch is changed
+                    ref.read(themeNotifierProvider.notifier).toggleTheme();
+                  },
+                  thumbColor: WidgetStateProperty.resolveWith<Color>((states) {
+                    return AppColors.whiteColor;
+                  }),
+                  activeTrackColor: AppColors.primaryColor,
+                  inactiveTrackColor: Colors.grey.shade300,
+                  thumbIcon: WidgetStateProperty.resolveWith<Icon?>((states) {
+                    return const Icon(
+                      Icons.circle,
+                      color: Colors.white,
+                    );
+                  }),
+                  trackOutlineColor:
+                      WidgetStateProperty.resolveWith<Color>((states) {
+                    return Colors.transparent;
+                  }),
+                ),
+              ),
+              Divider(
+                color: AppColors.dividerColor,
+              ),
+              ListTile(
+                leading: SvgPicture.asset(
+                  Constants.keyPath,
+                  colorFilter: ColorFilter.mode(
+                    AppColors.secondaryColor,
+                    BlendMode.srcIn,
+                  ),
+                ),
+                title: Text(
+                  "Privacy Policy",
+                  style: TextStyle(
+                      color: AppColors.secondaryColor,
+                      fontWeight: FontWeight.w600),
+                ),
                 trailing: SvgPicture.asset(
                   Constants.arrowRightPath,
                   colorFilter: ColorFilter.mode(
@@ -215,50 +257,52 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   ),
                 ),
               ),
-              Divider(
-                color: AppColors.dividerColor,
+              ListTile(
+                leading: SvgPicture.asset(
+                  Constants.messageQuestionPath,
+                  colorFilter: ColorFilter.mode(
+                    AppColors.secondaryColor,
+                    BlendMode.srcIn,
+                  ),
+                ),
+                title: Text(
+                  "Help Center",
+                  style: TextStyle(
+                      color: AppColors.secondaryColor,
+                      fontWeight: FontWeight.w600),
+                ),
+                trailing: SvgPicture.asset(
+                  Constants.arrowRightPath,
+                  colorFilter: ColorFilter.mode(
+                    AppColors.secondaryColor,
+                    BlendMode.srcIn,
+                  ),
+                ),
               ),
-              SizedBox(
-                height: SizeConfig.height * 0.03,
-              ),
-              Row(
-                children: [
-                  SvgPicture.asset(
-                    Constants.keyPath,
-                    colorFilter: ColorFilter.mode(
-                      AppColors.secondaryColor,
-                      BlendMode.srcIn,
-                    ),
-                  )
-                ],
-              ),
-              SizedBox(
-                height: SizeConfig.height * 0.03,
-              ),
-              Row(
-                children: [
-                  SvgPicture.asset(
-                    Constants.messageQuestionPath,
-                    colorFilter: ColorFilter.mode(
-                      AppColors.secondaryColor,
-                      BlendMode.srcIn,
-                    ),
-                  )
-                ],
-              ),
-              SizedBox(
-                height: SizeConfig.height * 0.03,
-              ),
-              Row(
-                children: [
-                  SvgPicture.asset(
+              InkWell(
+                onTap: () => logOut(ref),
+                child: ListTile(
+                  leading: SvgPicture.asset(
                     Constants.logoutPath,
                     colorFilter: ColorFilter.mode(
                       AppColors.secondaryColor,
                       BlendMode.srcIn,
                     ),
-                  )
-                ],
+                  ),
+                  title: Text(
+                    "Logout",
+                    style: TextStyle(
+                        color: AppColors.secondaryColor,
+                        fontWeight: FontWeight.w600),
+                  ),
+                  trailing: SvgPicture.asset(
+                    Constants.arrowRightPath,
+                    colorFilter: ColorFilter.mode(
+                      AppColors.secondaryColor,
+                      BlendMode.srcIn,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),

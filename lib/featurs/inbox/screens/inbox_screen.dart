@@ -15,9 +15,7 @@ class _InboxScreenState extends ConsumerState<InboxScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.whiteColor,
       appBar: AppBar(
-        backgroundColor: AppColors.whiteColor,
         centerTitle: true,
         title: Text(
           'Inbox',
@@ -30,7 +28,9 @@ class _InboxScreenState extends ConsumerState<InboxScreen> {
           child: SvgPicture.asset(
             Constants.arrowBackPath,
             colorFilter: ColorFilter.mode(
-              AppColors.blackColor,
+              Theme.of(context).brightness == Brightness.dark
+                  ? AppColors.iconDefaultColor // White in dark mode
+                  : AppColors.blackColor, // Black in light mode
               BlendMode.srcIn,
             ),
           ),
@@ -41,7 +41,9 @@ class _InboxScreenState extends ConsumerState<InboxScreen> {
             child: SvgPicture.asset(
               Constants.searchPath,
               colorFilter: ColorFilter.mode(
-                AppColors.blackColor,
+                Theme.of(context).brightness == Brightness.dark
+                    ? AppColors.iconDefaultColor // White in dark mode
+                    : AppColors.blackColor, // Black in light mode
                 BlendMode.srcIn,
               ),
             ),
