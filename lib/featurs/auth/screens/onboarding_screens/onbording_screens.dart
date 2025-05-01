@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:todyapp/core/constants/constans.dart';
 import 'package:todyapp/featurs/auth/screens/onboarding_screens/onboarding_page2.dart';
 import 'package:todyapp/featurs/auth/screens/onboarding_screens/onboarding_page3.dart';
@@ -68,6 +69,10 @@ class _OnbordingScreensState extends State<OnbordingScreens> {
               },
             ),
           ),
+        ),
+        SmoothPageIndicator(
+          controller: pageController,
+          count: onboardingPages.length,
         )
       ]),
     );

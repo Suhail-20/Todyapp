@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
             themeMode: themeMode, // Using theme mode from provider
-            home: NaviagtionBarPage(),
+            home: OnbordingScreens(),
           ),
         );
       },
