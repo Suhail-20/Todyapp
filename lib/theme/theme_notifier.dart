@@ -20,4 +20,9 @@ class ThemeNotifier extends StateNotifier<ThemeMode> {
     _themeHelper.updateThemeMode(newTheme);
     state = newTheme;
   }
+
+  void setTheme(ThemeMode mode) {
+    _themeHelper.updateThemeMode(mode);
+    state = mode;
+  }
 }

@@ -6,7 +6,7 @@ class UserModel {
   String? profilePic;
   String? confirm;
 
-  UserModel({
+  UserModel(required String name, {
     this.name,
     this.email,
     this.password,

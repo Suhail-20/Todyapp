@@ -1,8 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todyapp/core/utils.dart';
 import 'package:todyapp/featurs/auth/repository/auth_repository.dart';
+import 'package:todyapp/featurs/home/bottom/naviagtion_bar_page.dart';
+import 'package:todyapp/featurs/home/screens/home_page.dart';
 import 'package:todyapp/models/usermodel.dart';
 
 final userProvider = StateProvider<UserModel?>(
@@ -35,18 +38,24 @@ class AuthController extends StateNotifier<bool> {
         super(false); //loading
 
   Stream<User?> get authStateChange => _authRepository.authStateChange;
-  void signInWithGoogle(BuildContext context, bool isFromLogin) async {
+  Future<bool> signInWithGoogle(BuildContext context, bool isFromLogin) async {
     state = true;
 
     final userResult = await _authRepository.signInWithGoogle(isFromLogin);
     state = false;
 
-    if (!context.mounted) return; // ✅ Prevents using disposed context
+    if (!context.mounted) return false;
 
-    userResult.fold(
-      (failure) => showSnackBar(context, failure.message),
-      (userModel) =>
-          _ref.read(userProvider.notifier).update((state) => userModel),
+    return userResult.fold(
+      (failure) {
+        showSnackBar(context, failure.message);
+        return false;
+      },
+      (userModel) {
+        _ref.read(userProvider.notifier).update((state) => userModel);
+
+        return true;
+      },
     );
   }
 

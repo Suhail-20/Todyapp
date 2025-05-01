@@ -114,6 +114,7 @@ class CustomPasswordField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        SizedBox(height: 6),
         TextFormField(
           controller: controller,
           obscureText: isHidden,
