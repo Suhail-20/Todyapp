@@ -51,7 +51,11 @@ class MyApp extends StatelessWidget {
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
             themeMode: themeMode, // Using theme mode from provider
+<<<<<<< HEAD
             home: RegisterScreen(),
+=======
+            home: OnbordingScreens(),
+>>>>>>> 4107be0fd9959cd5ed29177e7a77df446dadbb77
           ),
         );
       },
