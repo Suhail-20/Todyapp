@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todyapp/core/constants/constans.dart';
 import 'package:todyapp/featurs/auth/controller/auth_controller.dart';
+import 'package:todyapp/featurs/home/bottom/naviagtion_bar_page.dart';
 import 'package:todyapp/featurs/home/screens/home_page.dart';
 import 'package:todyapp/theme/pallete.dart';
 
@@ -105,18 +106,10 @@ class ImageIconButton extends StatelessWidget {
 class SignInButton extends ConsumerWidget {
   final bool isFromLogin;
   const SignInButton({super.key, this.isFromLogin = true});
-
-  void signInWithGoogle(BuildContext context, WidgetRef ref) {
+  Future<void> signInWithGoogle(BuildContext context, WidgetRef ref) async {
     ref
         .read(authControllerProvider.notifier)
-        .signInWithGoogle(context, isFromLogin);
-    Navigator.pushAndRemoveUntil(
-      context,
-      CupertinoPageRoute(
-        builder: (context) => HomePage(),
-      ),
-      (route) => false,
-    );
+        .signInWithGoogle(context, isFromLogin); // Await this call
   }
 
   @override

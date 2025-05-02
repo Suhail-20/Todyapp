@@ -69,7 +69,6 @@ class AuthRepository {
           uid: userCredential.user!.uid,
           email: userCredential.user!.email,
           profilePic: userCredential.user!.photoURL ?? Constants.avatarDefault,
-         
         );
         await _users.doc(userCredential.user!.uid).set(userModel.toMap());
         print("New user created and saved to Firestore");

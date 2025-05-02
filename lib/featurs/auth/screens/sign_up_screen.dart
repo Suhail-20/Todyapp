@@ -4,6 +4,7 @@ import 'package:todyapp/core/common/button.dart';
 import 'package:todyapp/core/common/textfeild.dart';
 import 'package:todyapp/core/constants/constans.dart';
 import 'package:todyapp/core/enums/enum.dart';
+import 'package:todyapp/featurs/auth/screens/login_screen.dart';
 import 'package:todyapp/theme/pallete.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -160,7 +161,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           Navigator.push(
                             context,
                             CupertinoPageRoute(
-                              builder: (context) => const SignUpScreen(),
+                              builder: (context) => const LoginScreen(),
                             ),
                           );
                         },

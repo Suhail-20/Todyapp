@@ -1,10 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:todyapp/core/constants/constans.dart';
 import 'package:todyapp/featurs/auth/controller/auth_controller.dart';
+import 'package:todyapp/featurs/auth/screens/register_screen.dart';
 
 import 'package:todyapp/theme/pallete.dart';
+
 import 'package:todyapp/theme/theme_notifier.dart';
 
 class SettingsScreen extends ConsumerStatefulWidget {
@@ -15,8 +18,24 @@ class SettingsScreen extends ConsumerStatefulWidget {
 }
 
 class _SettingsScreenState extends ConsumerState<SettingsScreen> {
-  Future<void> logOut(WidgetRef ref) async {
-    await ref.read(authControllerProvider.notifier).logOut();
+  Future<void> logOut(WidgetRef ref, BuildContext context) async {
+    try {
+      // Reset theme to light mode using the notifier's method
+      ref.read(themeNotifierProvider.notifier).setTheme(ThemeMode.light);
+
+      // Perform logout
+      await ref.read(authControllerProvider.notifier).logOut();
+
+      // Navigate to register screen
+      Navigator.pushReplacement(
+        context,
+        CupertinoPageRoute(
+          builder: (context) => RegisterScreen(),
+        ),
+      );
+    } catch (e) {
+      print("Logout failed: $e");
+    }
   }
 
   @override
@@ -280,7 +299,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 ),
               ),
               InkWell(
-                onTap: () => logOut(ref),
+                onTap: () => logOut(ref, context),
                 child: ListTile(
                   leading: SvgPicture.asset(
                     Constants.logoutPath,
