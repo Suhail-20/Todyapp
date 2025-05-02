@@ -23,7 +23,7 @@ void main() async {
 
   runApp(
     DevicePreview(
-      enabled: false, // set to false in production
+      enabled: true, // set to false in production
       builder: (context) => const ProviderScope(child: MyApp()),
     ),
   );

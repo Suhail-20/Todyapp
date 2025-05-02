@@ -10,6 +10,7 @@ class AppColors {
   static const Color blackColor = Color(0xff000000);
   static const Color dividerColor = Color(0xffE0E5ED);
   static const Color googleColor = Color(0xffF3F5F9);
+  static const Color dotColor = Color(0xffCBF1F0);
   static const Color transparentColor = Color.fromARGB(0, 0, 0, 0);
 }
 
